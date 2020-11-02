@@ -39,17 +39,19 @@ public class DBManager2 {
         // db.close();
         //每增加一次书籍，首先判断item.getRstate是不是已读，这是大的前提
         //如果是，那么应该找到该用户的信息，然后判断
-
+        String phstri=item.getRphs();
         String stater = item.getRState();
+        String time_str2 = item.getRtime();
+
         if (stater.equals("已读")) {
-            String time_str2 = item.getRtime();
-            String time_str = time_str2.substring(0, time_str2.indexOf(" "));
+         //   String time_str = time_str2.substring(0, time_str2.indexOf(" "));
+            String time_str = time_str2;
             //还是用截断吧
             Cursor cursor0 = db.query(TBNAME3,
                     null,
                     //time需要进行模糊匹配，要是like不行，我们到时候再返回来更改为切断字符串进行匹配
                     "phs=? AND time=?",
-                    new String[]{String.valueOf(item.getRphs()), time_str},
+                    new String[]{phstri, time_str},
                     null,
                     null,
                     null);
@@ -57,22 +59,22 @@ public class DBManager2 {
             if (cursor0 != null) {
                 String booknum = cursor0.getString(cursor0.getColumnIndex("num"));
                 //把字符串转化为数字，然后更新
-                try {
+           //     try {
                     int booknum2 = Integer.parseInt(booknum);
                     booknum2 = booknum2 + 1;
                     ContentValues values2 = new ContentValues();
-                    values2.put("phs", item.getRphs());
+                    values2.put("phs", phstri);
                     values2.put("time", time_str);
                     values2.put("num", String.valueOf(booknum2));
                     db.update(TBNAME3, values, "phs=? AND time=?", new String[]{String.valueOf(item.getRphs()), time_str});
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
-                }
+//                } catch (NumberFormatException e) {
+//                    e.printStackTrace();
+//                }
             }
             //也就是这一天其实是第一次有读书，那么直接插入数据
             else {
                 ContentValues values3 = new ContentValues();
-                values3.put("phs", item.getRphs());
+                values3.put("phs", phstri);
                 values3.put("time", time_str);
                 values3.put("num", "1");
                 db.insert(TBNAME3, null, values3);
@@ -244,17 +246,19 @@ public class DBManager2 {
                 null,
                 null);
 //因为需要返回键值对，所以我写了RateItem3
+
+        RateItem3 item = null;
         if(cursor!=null){
             rateList = new ArrayList<RateItem3>();
-            while(cursor.moveToNext()){
-                RateItem3 item = new RateItem3();
+        while(cursor.moveToNext()){
+                item = new RateItem3();
                 item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
                 item.setNphs(cursor.getString(cursor.getColumnIndex("phs")));
                 item.setNtime(cursor.getString(cursor.getColumnIndex("time")));
                 item.setNnum(cursor.getString(cursor.getColumnIndex("num")));
-               // item.setNnum(cursor.toString(cursor.getColumnIndex("num")));
-                rateList.add(item);
-            }
+//               // item.setNnum(cursor.toString(cursor.getColumnIndex("num")));
+            rateList.add(item);
+          }
             cursor.close();
         }
         db.close();

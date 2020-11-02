@@ -81,40 +81,40 @@ public class MainActivity7 extends AppCompatActivity {
         //先把相同phs取出来，作为临时表，然后依次取出数据
         //已经·取了出来
         DBManager2 dbManager2 = new DBManager2(MainActivity7.this);
-        List<String> retList = new ArrayList<String>();
-        String m[]=null;
-        String n[]=null;
-        int i=0;
-        //画图
+
         LineChart line;
         int booknum=0;
         List<Entry> list=new ArrayList<>();          //实例化一个 List  用来保存你的数据
         line = (LineChart) findViewById(R.id.line);
-        for(RateItem3 rateItem : dbManager2.tongji(str_phs)) {
-            //内容已经在rateItem里面了，这里就要依次取出.然后再画图
-            m[i]=rateItem.getNtime();//日期
-            n[i]=rateItem.getNnum();//数量
-          booknum=Integer.parseInt(n[i]);
-            list.add(new Entry(i,booknum));
-            i=i+1;
+
+                 //取出来了，那么数据应该如何依次取出
+        int kk=0;
+
+        for(RateItem3 rateItem : dbManager.tongji(str_phs)) {
+            String m=rateItem.getNnum();
+            int b=Integer.parseInt(m);
+            list.add(new Entry(kk,b));
+            kk=kk+1;
         }
+        t_want.setText(String.valueOf(kk));
+        String[][] mm=new  String[kk][2];
+            //画图
 
 
-//这个数据是用来测试的，结果表明，没有数据
+        //这个数据是用来测试的，结果表明，没有数据
         //返回去检查建表是否发生了错误
         //返回去检查的地方：建表，插入数据，特别是截取字符串的地方
         //然后赋值的地方
 
-        list.add(new Entry(4,3));
 
+        list.add(new Entry(4,4));
         //list是你这条线的数据  "语文" 是你对这条线的描述（也就是图例上的文字）
         LineDataSet lineDataSet=new LineDataSet(list,"已读");
         LineData lineData=new LineData(lineDataSet);
         line.setData(lineData);
 
         //简单美化
-
-        //   X轴所在位置   默认为上面
+        // X轴所在位置   默认为上面
         line.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         //隐藏右边的Y轴
         line.getAxisRight().setEnabled(false);
