@@ -8,6 +8,19 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.TextView;
 import android.preference.PreferenceManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity7 extends AppCompatActivity {
 //
     TextView t_did;
@@ -51,7 +64,7 @@ public class MainActivity7 extends AppCompatActivity {
       //上面换成  str_did  就跑不出来
         t_did.setText(cou_did[0]);
         t_doing.setText(cou_did[1]);
-      //  t_want.setText(cou_did[2]);
+       t_want.setText(cou_did[2]);
         //偷懒是不行的，还是要换成数组
         //因为他会不显示
 
@@ -68,16 +81,43 @@ public class MainActivity7 extends AppCompatActivity {
         //先把相同phs取出来，作为临时表，然后依次取出数据
         //已经·取了出来
         DBManager2 dbManager2 = new DBManager2(MainActivity7.this);
-        String[][] mm=dbManager2.tongji(str_phs);
-        //测试表明，数据是空的，也就是说mm是空的
-        if(mm!=null){
-            //也就是说，这个人，他是有值存在于数据库里面的
-           //
-          t_want.setText(mm[0][0]);
+        List<String> retList = new ArrayList<String>();
+        String m[]=null;
+        String n[]=null;
+        int i=0;
+        //画图
+        LineChart line;
+        int booknum=0;
+        List<Entry> list=new ArrayList<>();          //实例化一个 List  用来保存你的数据
+        line = (LineChart) findViewById(R.id.line);
+        for(RateItem3 rateItem : dbManager2.tongji(str_phs)) {
+            //内容已经在rateItem里面了，这里就要依次取出.然后再画图
+            m[i]=rateItem.getNtime();//日期
+            n[i]=rateItem.getNnum();//数量
+          booknum=Integer.parseInt(n[i]);
+            list.add(new Entry(i,booknum));
+            i=i+1;
         }
-        //用来测试
-        else {
-            t_want.setText("mm返回为空");
-        }
+
+
+//这个数据是用来测试的，结果表明，没有数据
+        //返回去检查建表是否发生了错误
+        //返回去检查的地方：建表，插入数据，特别是截取字符串的地方
+        //然后赋值的地方
+
+        list.add(new Entry(4,3));
+
+        //list是你这条线的数据  "语文" 是你对这条线的描述（也就是图例上的文字）
+        LineDataSet lineDataSet=new LineDataSet(list,"已读");
+        LineData lineData=new LineData(lineDataSet);
+        line.setData(lineData);
+
+        //简单美化
+
+        //   X轴所在位置   默认为上面
+        line.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        //隐藏右边的Y轴
+        line.getAxisRight().setEnabled(false);
+
     }
 }

@@ -65,7 +65,7 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
         DBManager2 dbManager2 = new DBManager2(MainActivity4.this);
 //展示的时候应该区分用户，
         listItems = new ArrayList<HashMap<String, String>>();
-        for(RateItem2 rateItem : dbManager2.listAll()){
+        for(RateItem2 rateItem : dbManager2.listAll(str_phs)){
             HashMap<String, String> map = new HashMap<String, String>();
             //            //"ItemTime", "ItemStates","ItemTitle","ItemAuthor"
             map.put("ItemTime", rateItem.getRtime()); // 标题文字
