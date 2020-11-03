@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+
     tools:context=".MainActivity3" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/sec">
+        android:paddingRight="20dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/ass">
 
         <EditText
             android:id="@+id/phoneNumber"

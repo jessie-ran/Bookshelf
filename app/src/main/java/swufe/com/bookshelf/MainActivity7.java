@@ -75,7 +75,7 @@ ListView listview;
        t_want.setText(cou_did[2]);
         //偷懒是不行的，还是要换成数组
         //因为他会不显示
-
+/*
 //下面是关于统计显示的问题：
         //那么目前我们需要解决的问题是：
         //1、要不要新建一张表作为数据，
@@ -121,7 +121,7 @@ ListView listview;
 
      */
 
-
+/*
         //这个数据是用来测试的，结果表明，没有数据
         //返回去检查建表是否发生了错误
         //返回去检查的地方：建表，插入数据，特别是截取字符串的地方
@@ -140,6 +140,8 @@ ListView listview;
         line.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         //隐藏右边的Y轴
         line.getAxisRight().setEnabled(false);
+
+ */
 
     }
 }

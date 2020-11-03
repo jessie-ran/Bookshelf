@@ -4,6 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:background="@drawable/mmmmmmm"
     tools:context=".MainActivity6">
 
@@ -98,11 +102,11 @@
 
     <LinearLayout
 
-        android:textColor="#FFFFFF"
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="64dp"
+        android:layout_width="384dp"
+        android:layout_height="61dp"
         android:orientation="vertical"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,39 +118,41 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="10dp"
+            android:paddingLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints">
 
 
             <RadioButton
                 android:id="@+id/wantButtonId"
-                android:layout_width="136dp"
+                android:layout_width="114dp"
                 android:layout_height="match_parent"
 
-                android:textColor="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
                 android:paddingLeft="10dp"
-                android:text="想读" />
+                android:text="想读"
+                android:textColor="#FFFFFF" />
 
             <RadioButton
                 android:id="@+id/doButtonId"
 
-                android:textColor="#FFFFFF"
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#FFFFFF"
                 android:text="在读"
+                android:textColor="#FFFFFF"
 
                 />
 
             <RadioButton
                 android:id="@+id/didButtonId"
-                android:layout_width="146dp"
+                android:layout_width="132dp"
 
-                android:textColor="#FFFFFF"
-                android:layout_height="71dp"
+                android:layout_height="match_parent"
                 android:backgroundTint="#FFFFFF"
-                android:text="已读" />
+                android:text="已读"
+                android:textColor="#FFFFFF" />
         </RadioGroup>
 
 

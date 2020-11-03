@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/aa"
     android:orientation="vertical"
+    android:paddingBottom="10dp"
     tools:context=".MainActivity4">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,11 +30,14 @@
     <ListView
         android:id="@+id/my_list"
         android:layout_width="match_parent"
-        android:layout_height="624dp" />
+        android:layout_height="590dp"
+        android:paddingLeft="16dp"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="10dp">
 
         <Button
             android:id="@+id/button4"

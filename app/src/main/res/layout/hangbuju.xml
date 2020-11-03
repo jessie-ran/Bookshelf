@@ -23,11 +23,12 @@
 
     <TextView
         android:id="@+id/itemAuthor"
-        android:layout_width="385dp"
-        android:layout_height="38dp"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
         android:gravity="end"
         android:text="@string/author"
         android:textColor="#FFFFFF"
+        android:paddingRight="16dp"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
