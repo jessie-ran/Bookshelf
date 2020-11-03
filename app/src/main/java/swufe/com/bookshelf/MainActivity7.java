@@ -105,9 +105,10 @@ public class MainActivity7 extends AppCompatActivity {
         //返回去检查建表是否发生了错误
         //返回去检查的地方：建表，插入数据，特别是截取字符串的地方
         //然后赋值的地方
-
-
-        list.add(new Entry(4,4));
+        list.add(new Entry(1,1));
+        list.add(new Entry(2,2));
+        list.add(new Entry(3,1));
+        list.add(new Entry(4,3));
         //list是你这条线的数据  "语文" 是你对这条线的描述（也就是图例上的文字）
         LineDataSet lineDataSet=new LineDataSet(list,"已读");
         LineData lineData=new LineData(lineDataSet);

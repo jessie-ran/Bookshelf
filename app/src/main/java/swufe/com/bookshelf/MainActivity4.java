@@ -162,5 +162,9 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
         Intent intent = new Intent(this, MainActivity7.class);
         startActivity(intent);
     }
-
+    public  void  km(View v){
+        //直接打开新的页面，在新的页面去从文件得到用户的id,然后统计
+        Intent intent = new Intent(this, MainActivity8.class);
+        startActivity(intent);
+    }
 }

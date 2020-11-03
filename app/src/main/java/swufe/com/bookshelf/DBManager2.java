@@ -264,4 +264,37 @@ public class DBManager2 {
         db.close();
         return rateList;
     }
+
+
+    //展示一部分
+    //全部展示
+    public List<RateItem2> listAll2() {
+        List<RateItem2> rateList = null;
+        SQLiteDatabase db = dbHelper2.getReadableDatabase();
+        Cursor cursor = db.query(TBNAME2,
+                null,
+                null,
+               null,
+                null,
+                null,
+                null);
+        if (cursor != null) {
+            rateList = new ArrayList<RateItem2>();
+            while (cursor.moveToNext()) {
+                RateItem2 item = new RateItem2();
+                // item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+                // item.setCurName(cursor.getString(cursor.getColumnIndex("CURNAME")));
+                //item.setCurRate(cursor.getString(cursor.getColumnIndex("CURRATE")));
+                item.setRbookN(cursor.getString(cursor.getColumnIndex("bookN")));
+                item.setRtime(cursor.getString(cursor.getColumnIndex("time")));
+                item.setRreview(cursor.getString(cursor.getColumnIndex("review")));
+                item.setRauthor(cursor.getString(cursor.getColumnIndex("author")));
+                rateList.add(item);
+            }
+            cursor.close();
+        }
+        db.close();
+        return rateList;
+    }
+
 }
