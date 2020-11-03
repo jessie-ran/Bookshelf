@@ -40,11 +40,12 @@
         android:id="@+id/itemTime"
         android:layout_width="311dp"
         android:layout_height="34dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="4dp"
-        android:textColor="#FFFFFF"
         android:layout_marginEnd="8dp"
         android:text="@string/time1"
 
+        android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/itemStates"
         app:layout_constraintHorizontal_bias="0.0"
@@ -53,11 +54,12 @@
 
     <TextView
         android:id="@+id/itemStates"
-        android:layout_width="98dp"
+        android:layout_width="74dp"
         android:layout_height="34dp"
         android:layout_marginTop="4dp"
-        android:background="@drawable/tag"
+        android:layout_marginEnd="15dp"
 
+        android:background="@drawable/tag"
         android:gravity="center"
         android:text="@string/zhuangtai"
         android:textColor="#3C3B3B"

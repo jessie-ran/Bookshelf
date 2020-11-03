@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/nnnnnnnn"
     tools:context=".MainActivity7">
 
     <com.github.mikephil.charting.charts.LineChart
@@ -20,9 +21,8 @@
         android:id="@+id/textView"
         android:layout_width="414dp"
         android:layout_height="98dp"
-        android:background="@drawable/ty"
+        android:textColor="#FFFFFF"
         android:gravity="center"
-
         android:text="@string/hello1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,9 +34,11 @@
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="56dp"
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="@string/sa1"
         android:textSize="20sp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
@@ -45,8 +47,10 @@
         android:layout_width="122dp"
         android:layout_height="53dp"
         android:layout_marginTop="56dp"
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="@string/niwdq"
+
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
@@ -58,7 +62,9 @@
         android:layout_width="177dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
+
         android:layout_marginTop="28dp"
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="@string/sa2"
         android:textSize="20sp"
@@ -70,6 +76,8 @@
         android:layout_width="122dp"
         android:layout_height="53dp"
         android:layout_marginTop="28dp"
+
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="@string/niwdq"
         android:textSize="15sp"
@@ -84,8 +92,10 @@
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
+        android:textColor="#FFFFFF"
         android:gravity="center"
         android:text="@string/sa3"
+
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -95,7 +105,9 @@
         android:layout_width="122dp"
         android:layout_height="53dp"
         android:layout_marginTop="28dp"
+        android:textColor="#FFFFFF"
         android:gravity="center"
+
         android:text="@string/niwdq"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"

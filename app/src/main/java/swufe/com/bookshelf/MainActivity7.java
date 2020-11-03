@@ -6,10 +6,13 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.preference.PreferenceManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -23,6 +26,11 @@ import java.util.List;
 
 public class MainActivity7 extends AppCompatActivity {
 //
+ListView listview;
+    ArrayList<HashMap<String,String>> listItems;
+    SimpleAdapter listItemAdapter;
+
+    TextView greet;
     TextView t_did;
     TextView t_doing;
     TextView t_want;
@@ -99,6 +107,19 @@ public class MainActivity7 extends AppCompatActivity {
         t_want.setText(String.valueOf(kk));
         String[][] mm=new  String[kk][2];
             //画图
+//重头再来  //listItems数据源
+    /*   List<String> retList = new ArrayList<String>();
+          DBManager2 dbManager3= new DBManager2(MainActivity7.this);
+              listItems = new ArrayList<HashMap<String, String>>();
+               for(RateItem3 rateItem : dbManager3.tongji(str_phs)){
+                  HashMap<String, String> map = new HashMap<String, String>();
+                  map.put("ItemTime", rateItem.getNnum); // 标题文字
+                  map.put("ItemStates",rateItem.getNtime)); // 详情描述
+                  listItems.add(map);
+                }
+
+
+     */
 
 
         //这个数据是用来测试的，结果表明，没有数据

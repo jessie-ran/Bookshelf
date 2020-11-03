@@ -22,12 +22,11 @@
         android:text="@string/huhu" />
 
 
-
     <TextView
         android:id="@+id/itemR"
 
         android:layout_width="match_parent"
-        android:layout_height="171dp"
+        android:layout_height="113dp"
         android:text="@string/abababba"
         android:textColor="#FFFFFF" />
 </LinearLayout>

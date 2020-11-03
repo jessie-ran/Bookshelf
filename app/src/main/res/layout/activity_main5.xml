@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/mmmmmmm"
     tools:context=".MainActivity5">
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="0dp"
         android:layout_height="57dp"
+        android:backgroundTint="#FFFFFF"
         android:hint="@string/bookn"
         android:inputType="text"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,8 +27,11 @@
         android:id="@+id/editText"
         android:layout_width="262dp"
         android:layout_height="60dp"
+
+        android:backgroundTint="#FFFFFF"
         android:hint="@string/author"
         android:inputType="text"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -37,35 +43,42 @@
         android:id="@+id/editText2"
         android:layout_width="410dp"
         android:layout_height="427dp"
+        android:backgroundTint="#FFFFFF"
         android:gravity="top"
-        android:background="@drawable/ds"
         android:hint="@string/dsp"
 
+        android:inputType="textMultiLine"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText"
-        app:layout_constraintVertical_bias="0.0"
-        android:inputType="textMultiLine"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
+        android:layout_width="104dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="52dp"
+        android:background="@drawable/vc"
+
         android:onClick="pushdata"
         android:text="@string/re2"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="211dp"
+        android:layout_height="52dp"
+        android:background="@drawable/vc"
         android:onClick="open"
+
         android:text="@string/online"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.716"
@@ -80,7 +93,7 @@
         app:layout_constraintEnd_toStartOf="@+id/editText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3"
-        app:srcCompat="@drawable/aut" />
+        app:srcCompat="@drawable/lll" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -91,11 +104,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
-        app:layout_constraintVertical_bias="0.333" >
+        app:layout_constraintVertical_bias="0.333">
 
         <RadioGroup
             android:id="@+id/radioGroupId"
             android:layout_width="match_parent"
+            android:textColor="#FFFFFF"
+
             android:layout_height="match_parent"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -108,15 +123,18 @@
                 android:layout_width="136dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#FFFFFF"
-                android:text="想读"
+                android:textColor="#FFFFFF"
+
                 android:paddingLeft="10dp"
-                />
+                android:text="想读" />
 
             <RadioButton
                 android:id="@+id/doButtonId"
                 android:layout_width="128dp"
                 android:layout_height="match_parent"
                 android:backgroundTint="#FFFFFF"
+                android:textColor="#FFFFFF"
+
                 android:text="在读"
 
                 />
@@ -126,10 +144,10 @@
                 android:layout_width="146dp"
                 android:layout_height="71dp"
                 android:backgroundTint="#FFFFFF"
-                android:text="已读"
-                />
-        </RadioGroup>
+                android:textColor="#FFFFFF"
 
+                android:text="已读" />
+        </RadioGroup>
 
 
     </LinearLayout>
