@@ -5,8 +5,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.icu.text.SimpleDateFormat;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DBManager2 {
@@ -15,7 +18,9 @@ public class DBManager2 {
     private String TBNAME3;
     //首先定义有多少天,这是这个数组的长度.但是长度现在还不确定
     int[] daynum;
-
+    private static SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    Date dmk;
+    Date  dmk_f;
     public DBManager2(Context context) {
         dbHelper2 = new DBHelper(context);
         TBNAME2 = DBHelper.TB_NAME2;
@@ -301,5 +306,70 @@ public class DBManager2 {
     //我就不信，数据读不出来
     //重新写统计函数，上个统计函数要么返回有错误，要么就是一开始插入数据库那里字符串截取出错
     //参照一下四，她也是返回一些值
+    public  float ss(String id,String timeyd) {
+        String m=null;
+        float nk=0.0f;
+        int cou0=0;
+        //查询，然后计算分数，返回，展示
+        SQLiteDatabase db = dbHelper2.getWritableDatabase();
+        //这里应该是查询语句而不是删除语句
+        //时间模糊匹配的话，应该匹配年月，至于几号，就不用管了
+        //模糊查询不知道对不对
+        Cursor cursor0 = db.query(TBNAME2,
+                null,
+                "phs=? AND State=? AND time like ?",
+                new String[]{String.valueOf(id), "已读",timeyd+'%'},
+                null,
+                null,
+                null);
+//依次计算，
+String tn=timeyd+"-01";
+//tn,只是代表这个月，
+        String t=null;
+        float mk=0.0f;
+        float fmk=0.0f;
+        dmk_f= new Date();
+        long begin;
+
+        dmk= new Date();
+
+        long end;
+        //dmk是有到今天
+        if (cursor0 != null) {
+            cursor0.moveToFirst();
+
+            while (!cursor0.isAfterLast()) {
+                cou0 = cou0 + 1;
+                t=cursor0.getString(cursor0.getColumnIndex("time"));
+                 try {
+                     dmk_f=simpleDateFormat.parse(tn);
+                     begin=dmk_f.getTime();
+                     dmk=simpleDateFormat.parse(t);
+                    //接下来计算是否相差一，第一条数据就和该月的1号进行计算
+                     //现在的格式：yyyy-MM-dd，或者直接截取号数，但是月初都是有0的
+                     //所以一开始就直接看看是几号，然后依次循环
+                     end=dmk.getTime();
+                     mk=(float) ((end - begin) / (1000 * 3600 * 24));
+                     //这里判断相差几天
+                     fmk=fmk+mk+1;
+                     begin=end;
+                       } catch (ParseException e) {
+                           e.printStackTrace();
+                     }
+               //
+                //现在dmk就变成了时间格式
+
+                cursor0.moveToNext();
+            }
+            //字符串转化为日期
+            // Date date = simpleDateFormat.parse("2019-10-31");
+            //经过测试，是有数据的，只不过getCount取出来的数据为0
+
+            //  n=20;
+            cursor0.close();
+        }
+        nk= (float) (cou0*0.5+fmk*0.143);
+        return nk;
+    }
 
 }

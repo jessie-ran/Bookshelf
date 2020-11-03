@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.widget.ListView;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.preference.PreferenceManager;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -40,6 +42,8 @@ ListView listview;
     String str_want;
     String str_doing;
     String str_did;
+    Date dt;
+    TextView t4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,7 @@ ListView listview;
         t1=findViewById(R.id.textView3);
         t2=findViewById(R.id.textView9);
         t3=findViewById(R.id.textView11);
+        t4=findViewById(R.id.textView13);
 
         str_did=t_did.getText().toString();
         str_doing=t_doing.getText().toString();
@@ -143,5 +148,22 @@ ListView listview;
 
  */
 
+//上面本来是一个折现图，但是不太正确，所以更改为这个月的积分
+        //计算的方式是：分数=已读的书的数量*0.5+时间间隔*0.143
+        //上面既然已经把已读的数量选择出来了，那么我们只需要在做一个筛选时间的操作
+
+//先读出日期数据
+        dt = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
+       String   str_time = sdf.format(dt);
+       float  MM=0.0f;
+        MM=dbManager.ss(str_phs,str_time);
+        MM=MM*2;
+        if(MM>10){
+            t4.setText("这个月的积分为满分，10分");
+        }
+        else {
+            t4.setText("这个月读书达到积分：   " + String.valueOf(MM)+"分");
+        }
     }
 }
