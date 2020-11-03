@@ -57,6 +57,9 @@ public class MainActivity3 extends AppCompatActivity {
         //首先判断是否有这条数据存在
         DBManager db=new DBManager(MainActivity3.this);
         RateItem rat2=db.findById(phoneString);
+        if(phoneString.length()==0){
+            Toast.makeText(MainActivity3.this, "请输入手机号", Toast.LENGTH_LONG).show();
+        }
         if(rat2!=null){
             Toast.makeText(MainActivity3.this, "账号已经存在", Toast.LENGTH_LONG).show();
         }

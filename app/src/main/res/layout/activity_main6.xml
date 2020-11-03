@@ -46,8 +46,8 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="410dp"
-        android:layout_height="427dp"
+        android:layout_width="390dp"
+        android:layout_height="430dp"
         android:backgroundTint="#FFFFFF"
 
         android:gravity="top"
@@ -65,21 +65,22 @@
         android:id="@+id/button3"
         android:layout_width="104dp"
         android:layout_height="52dp"
-        android:layout_marginStart="68dp"
-        android:background="@drawable/vc"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/shape2"
         android:onClick="pushdata"
 
         android:text="@string/zvx"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="210dp"
+        android:layout_width="190dp"
         android:layout_height="52dp"
-        android:background="@drawable/vc"
+        android:background="@drawable/shape2"
         android:onClick="open"
         android:text="@string/online"
         android:textColor="#FFFFFF"

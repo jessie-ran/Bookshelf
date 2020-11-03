@@ -84,6 +84,7 @@
         android:backgroundTint="#F2F4F4"
         android:onClick="btn2"
         android:text="@string/tishi6"
+        android:background="@drawable/shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,6 +97,8 @@
         android:layout_height="50dp"
         android:backgroundTint="#F3EFEF"
         android:onClick="btn1"
+        android:background="@drawable/shape"
+
         android:text="@string/tishi5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

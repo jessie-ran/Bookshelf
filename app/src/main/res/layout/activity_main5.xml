@@ -30,7 +30,6 @@
         android:id="@+id/editText"
         android:layout_width="262dp"
         android:layout_height="60dp"
-
         android:backgroundTint="#FFFFFF"
         android:hint="@string/author"
         android:inputType="text"
@@ -44,8 +43,8 @@
 
     <EditText
         android:id="@+id/editText2"
-        android:layout_width="399dp"
-        android:layout_height="421dp"
+        android:layout_width="390dp"
+        android:layout_height="417dp"
         android:backgroundTint="#FFFFFF"
         android:gravity="top"
         android:hint="@string/dsp"
@@ -63,8 +62,8 @@
         android:id="@+id/button3"
         android:layout_width="104dp"
         android:layout_height="52dp"
-        android:layout_marginStart="52dp"
-        android:background="@drawable/vc"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/shape2"
 
         android:onClick="pushdata"
         android:text="@string/re2"
@@ -75,9 +74,9 @@
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="211dp"
+        android:layout_width="190dp"
         android:layout_height="52dp"
-        android:background="@drawable/vc"
+        android:background="@drawable/shape2"
         android:onClick="open"
 
         android:text="@string/online"

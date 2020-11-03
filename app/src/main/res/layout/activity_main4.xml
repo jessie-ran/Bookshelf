@@ -41,9 +41,9 @@
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="100dp"
+            android:layout_width="96dp"
             android:layout_height="41dp"
-            android:background="@drawable/mkm"
+            android:background="@drawable/li"
 
             android:gravity="center_vertical|right"
             android:onClick="addbook"
@@ -51,7 +51,7 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button8"
-            app:layout_constraintHorizontal_bias="0.148"
+            app:layout_constraintHorizontal_bias="0.517"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
