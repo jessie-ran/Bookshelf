@@ -56,6 +56,8 @@ public class MainActivity2 extends AppCompatActivity {
                Toast.makeText(MainActivity2.this, "密码错误", Toast.LENGTH_LONG).show();
            }
            else {
+               //登陆成功，这里再写一个文件，直接用来非第一次登陆的时候用
+
                String na=rat.getUserName();
                Toast.makeText(MainActivity2.this, "登录成功", Toast.LENGTH_LONG).show();
                Intent intent = new Intent(this, MainActivity4.class);
@@ -65,6 +67,11 @@ public class MainActivity2 extends AppCompatActivity {
                editor.putString("userid",phstr);
                editor.putString("uname",na);
                editor.commit();
+
+                SharedPreferences sharedPreferences2 = getSharedPreferences("loginnum", Activity.MODE_PRIVATE);
+                           SharedPreferences.Editor editor2 = sharedPreferences2.edit();
+                             editor2.putString("lonum","2");
+                              editor2.commit();
                startActivity(intent);
            }
         }

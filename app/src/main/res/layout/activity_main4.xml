@@ -16,15 +16,30 @@
 
         <TextView
             android:id="@+id/gennied"
-            android:layout_width="252dp"
-            android:layout_height="60dp"
+
+            android:layout_width="184dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="84dp"
             android:gravity="center_vertical"
             android:text="@string/zhaohu"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.454" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="67dp"
+            android:layout_height="24dp"
+            android:background="@drawable/shape2"
+            android:onClick="tu"
+            android:text="@string/nunu"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/gennied"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ListView
@@ -43,15 +58,14 @@
             android:id="@+id/button4"
             android:layout_width="96dp"
             android:layout_height="41dp"
-            android:background="@drawable/li"
+            android:layout_marginStart="16dp"
 
+            android:background="@drawable/li"
             android:gravity="center_vertical|right"
             android:onClick="addbook"
             android:text="@string/add2"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button8"
-            app:layout_constraintHorizontal_bias="0.517"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
@@ -60,14 +74,14 @@
             android:id="@+id/button8"
             android:layout_width="96dp"
             android:layout_height="41dp"
+            android:layout_marginStart="36dp"
             android:background="@drawable/mkmk"
             android:gravity="center_vertical|left"
             android:onClick="Statistics"
             android:text="@string/list"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button4"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -81,7 +95,10 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button8" />
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toEndOf="@+id/button8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

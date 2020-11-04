@@ -167,4 +167,13 @@ public class MainActivity4 extends AppCompatActivity implements AdapterView.OnIt
         Intent intent = new Intent(this, MainActivity8.class);
         startActivity(intent);
     }
+    public  void  tu(View v){
+        //这里改掉xml文件里的值
+        SharedPreferences sharedPreferences2 = getSharedPreferences("loginnum", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPreferences2.edit();
+        editor2.putString("lonum","1");
+        editor2.commit();
+        Intent intent = new Intent(this, MainActivity2.class);
+        startActivity(intent);
+    }
 }
